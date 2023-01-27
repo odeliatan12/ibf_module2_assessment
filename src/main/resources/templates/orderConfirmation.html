@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+</head>
+<body data-th-object="${orderDetails}">
+    <h1>Delivery Details</h1>
+    <p>Order number</p>
+    <a href=""><p data-th-text="*{id}"></p></a>
+    <br>
+    <p>Your order will be delivered to</p>
+    <p data-th-text="*{address}"></p>
+    <br>
+    <p>Total Cost: </p>
+    <p data-th-text="*{address}"></p>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .error {
+          color: red;
+        }
+    </style>
+    <title>Order Details</title>
+</head>
+<body>
+    <h1>
+        Order Delivery Details
+    </h1>
+    <br>
+    <form 
+        action="#"
+        data-th-action="@{/pizza/order}"
+        data-th-object="${orderDetails}"
+        method="post"
+    >
+        <p>
+            Name:
+            <input type="text" data-th-field="*{name}" />
+            <br />
+            <span
+            class="error"
+            data-th-if="${#fields.hasErrors('name')}"
+            data-th-errors="*{name}"
+            ></span>
+        </p>
+        <br>
+        <p>
+            Address:
+            <input type="text" data-th-field="*{address}" />
+            <br />
+            <span
+              class="error"
+              data-th-if="${#fields.hasErrors('address')}"
+              data-th-errors="*{address}"
+            ></span>
+        </p>
+        <br>
+        <p>
+            Phone:
+            <input type="text" data-th-field="*{phone}" />
+            <br />
+            <span
+              class="error"
+              data-th-if="${#fields.hasErrors('phone')}"
+              data-th-errors="*{phone}"
+            ></span>
+        </p>
+        <br>
+        <p>
+            Rush: 
+            <input type="checkbox" id="rush" name="rush" data-th-checked="*{rush}">
+        </p>
+        <p>
+            Comments:
+            <input type="text" data-th-field="*{comments}" />
+            <br />
+            <span
+              class="error"
+              data-th-if="${#fields.hasErrors('comments')}"
+              data-th-errors="*{comments}"
+            ></span>
+        </p>
+        <br>
+        <button type="submit">Place Order</button>
+    </form>
+    <button><a href="http://localhost:8080/index.html">Cancel Order</a></button>
+</body>
+</html>
